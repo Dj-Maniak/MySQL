@@ -23,29 +23,22 @@ if (isset($registration_name) and isset($registration_surname)      // Пров�
     } else {
         $take_away = "SELECT `login` FROM `users` WHERE login = '$registration_login'";
         $vaw = mysqli_query($con, $take_away);
-        while ($row_login = mysqli_fetch_array($vaw)){
-           // var_dump($row_login['login']);
-
-           // var_dump($registration_login);
+        while ($row_login = mysqli_fetch_array($vaw)) {
+            // var_dump($row_login['login']);
+            // var_dump($registration_login);
             if ($row_login['login'] === $registration_login) {
-
-
                 header("Location: /html/there_is_such.html");
-            }else{
-
-                echo 'jjjjhjj';
+                die;
+            } else {
+                header("Location: /html/registration.html");
+                die;
             }
         }
-
-
-        }
-
-
-
-
-} else {
-    header("Location: /html/registration.html");
-    die;
-
+        $adding_qwery = "INSERT INTO `users`(`name`, `surname`, `login`, `password`) 
+    VALUES ('$registration_name','$registration_surname','$registration_login','$registration_password')";
+        mysqli_query($con, $adding_qwery);
+        header("Location: /html/successfully.html");
+    }
 }
+
 
