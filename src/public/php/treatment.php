@@ -16,16 +16,15 @@ if (isset($treatment_login) and isset($treatment_password)      // Провер�
 if (mysqli_connect_error()) {
     echo "Нет подключения до БД" . mysqli_connect_errno();
 } else {
-    $entry = "SELECT `login`, `password` FROM `users` WHERE login='$treatment_login'";
+    $entry = "SELECT `login`, `password`, `name`, `surname` FROM `users` WHERE login='$treatment_login'";
     $echo = mysqli_query($con, $entry);
     while ($row = mysqli_fetch_array($echo)) {
         if (trim($treatment_login) === trim($row['login']) and trim($treatment_password) === trim($row['password'])) {
-            var_dump($treatment_login);
-            var_dump($treatment_password);
-            var_dump($row['login']);
-            var_dump($row['password']);
-            echo 'wfwfwfwf';
-            die;
+            setcookie('login', $row['login']);
+            setcookie('password', $row['password']);
+            setcookie('name', $row['name']);
+            setcookie('surname', $row['surname']);
+            header("Location: /php/home_page.php");
         }
 
     }
