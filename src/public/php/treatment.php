@@ -7,7 +7,6 @@ if (isset($treatment_login) and isset($treatment_password)      // Провер�
     and !empty($treatment_login) and !empty($treatment_password)) {
     $con = mysqli_connect('mysql', 'root', 'rootpass', 'registration_mysql');
     mysqli_set_charset($con, 'utf8');
-
 } else {
     header("Location: /html/form.html");
     die;
@@ -37,4 +36,3 @@ echo '<h1>Неправильный логин или пароль</h1>'; ?>
     <br>
     <label><input name="remember" type="checkbox" value="yes">Запомить </label><input type="submit"
                                                                                       value="Вход"><br>
-
