@@ -1,27 +1,20 @@
 <?php
 
-$uri = explode('?', $_SERVER['REQUEST_URI'])[0];
+use application\core\Router;
+
+
+
+spl_autoload_register(function ($class) {
+    $path = str_replace('\\', '/', $class . '.php');
+    if(file_exists($path)){
+        require $path;
+    }
+});
 
 session_start();
 
-function example(string $login, int $age)
-{
 
-}
 
-switch ($uri) {
-    case '/login':
-    {
-        echo 'login<br>';
-    }
-    case '/main':
-    {
-        echo 'main<br>';
-        break;
-    }
-    default:
-    {
-        echo 'ROUTE NOT FOUND<br>';
-        break;
-    }
-}
+$route = new Router();
+$route->run();
+
