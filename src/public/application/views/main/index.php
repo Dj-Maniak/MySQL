@@ -8,6 +8,16 @@
     <title>Главная страница</title>
 </head>
 <body>
+<?php
 
+//foreach ($news as $value) {
+
+  //  var_dump($value['name']);
+
+//}
+
+
+
+?>
 </body>
 </html>

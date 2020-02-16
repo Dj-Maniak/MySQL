@@ -63,7 +63,5 @@ class Router
 
             Views::errorCode(404);
         }
-
-
     }
 }

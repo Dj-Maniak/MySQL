@@ -49,5 +49,17 @@ class Views
         }
     }
 
+    public function massage($status, $massage)
+    {
+        exit(json_encode(["status" => $status, 'message' => $massage]));
+
+    }
+
+    public function location($url)
+    {
+        exit(json_encode(["url" => $url]));
+
+    }
+
 
 }

@@ -11,7 +11,12 @@ class AccountController extends Controller
 {
     public function loginActions()
     {
-      //  $this->view->redirect('/');
+        if(!empty($_POST) )
+        {
+
+            $this->view->location('/');
+        }
+
         $this->view->render('Вход');
 
     }

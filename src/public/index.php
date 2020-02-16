@@ -1,6 +1,7 @@
 <?php
 
 use application\core\Router;
+use application\lib\Database;
 
 
 
@@ -17,4 +18,8 @@ session_start();
 
 $route = new Router();
 $route->run();
+
+
+
+
 

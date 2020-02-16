@@ -8,12 +8,13 @@
     <title><?php echo $title ?></title>
 </head>
 <body>
-<form action="/php/treatment.php" method="post">
+<form action="/account/login" method="post">
     <label>Логин:  <input type="text" name="login" size="30" maxlength="20"></label><br>
     <br>
     <label>Пароль:<input type="password" name="password" size="30" maxlength="20"></label><br>
     <br>
-    <label><input name="remember" type="checkbox" value="yes">Запомить </label><input type="submit" value="Вход"><br>
+    <label><input name="remember" type="checkbox" value="yes">Запомить
+    </label><input type="submit" value="Вход"><br>
 </form>
 <br>
 <a href="/html/registration.html">Регистрация </a>
