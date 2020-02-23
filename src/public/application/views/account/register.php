@@ -8,7 +8,7 @@
     <title><?php echo $title ?></title>
 </head>
 <body>
-<form action="/php/registration.php" method="post">
+<form action="/account/register" method="post">
     <input type="text" name="registration_name" placeholder="Имя" size="10" maxlength="25">
     <input type="text" name="registration_surname" placeholder="Фамилия" size="18" maxlength="30"><br>
     <br>
@@ -16,8 +16,10 @@
     <br>
     <input type="password" name="registration_password" placeholder="Пароль" size="30" maxlength="25"><br>
     <br>
-    <input type="submit" value="Регистрация">
+    <input type="submit" value="Регистрация"><br>
+    <br>
 </form>
+
 
 <style>
     .btn {

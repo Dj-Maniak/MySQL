@@ -23,6 +23,7 @@ class Views
             require 'application/views/' . $this->path . '.php';
             $content = ob_get_clean();
             require 'application/views/layout/' . $this->layout . '.php';
+            die;
 
         } else {
             echo 'Путь не найден:' . $this->path;

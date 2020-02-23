@@ -18,8 +18,3 @@ session_start();
 
 $route = new Router();
 $route->run();
-
-
-
-
-

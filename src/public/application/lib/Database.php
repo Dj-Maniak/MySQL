@@ -9,7 +9,7 @@ use PDO;
 
 class Database
 {
-    protected $connect;
+    public $connect;
 
     public function __construct()
     {
@@ -22,9 +22,9 @@ class Database
     {
 
         $stmt = $this->connect->prepare($sql);
-        if(!empty($params)){
-            foreach ($params as $key => $val){
-                $stmt->bindValue(':'. $key, $val);
+        if (!empty($params)) {
+            foreach ($params as $key => $val) {
+                $stmt->bindValue(':' . $key, $val);
             }
         }
         $stmt->execute();
@@ -33,16 +33,26 @@ class Database
 
     public function row($sql, $params = [])
     {
-        $result = $this->query($sql, $params = []);
+        $result = $this->query($sql, $params);
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function column($sql, $params)
+    public function column($sql, $params = [])
     {
 
         $result = $this->query($sql, $params);
         return $result->fetchColumn();
 
+
     }
+    public function column2($sql)
+    {
+
+        $result = $this->query($sql);
+
+    }
+
+
+
 }
 
